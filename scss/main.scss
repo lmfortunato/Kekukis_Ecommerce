@@ -1,0 +1,32 @@
+/*VARIABLES*/
+$fontFamily: 'Montserrat',
+sans-serif;
+$bgFooter: rgb(199, 206, 219);
+$pixels: 100px;
+$colortitle: rgb(55, 86, 163);
+
+// hsl primario hsl(40, 70%, 60%)
+// hsl secundario hsl(40, 70%, 90%) color: #222;
+//  button ghost background-color:transparent; border: 3px solid hsl (40, 70%, 90%)
+
+/* GENERAL */
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
+@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,600;1,100&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,300;0,400;0,600;1,500&family=Work+Sans:ital,wght@0,100;0,600;1,100&display=swap";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+@import"_header";
+
+
+    main {
+        background: hsl(40, 70%, 90%);
+        color: #222;
+        display: flex;
+        align-items: center;
+    }

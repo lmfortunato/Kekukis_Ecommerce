@@ -1,0 +1,78 @@
+/*VARIABLES*/
+/* GENERAL */
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
+@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,600;1,100&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,300;0,400;0,600;1,500&family=Work+Sans:ital,wght@0,100;0,600;1,100&display=swap";
+* {
+  margin: 0;
+  padding: 0; }
+
+header {
+  background-image: url(../img/sprinklesBg.jpg);
+  color: white;
+  padding: 0;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0; }
+  header img:hover {
+    cursor: pointer; }
+
+nav {
+  display: flex;
+  flex-direction: row;
+  row-gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%; }
+  nav .nav-item {
+    padding: 30px; }
+  nav ul {
+    list-style: none;
+    font-size: 0; }
+    nav ul li {
+      list-style: none;
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      margin: 0 10px; }
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        text-decoration: none;
+        background-image: linear-gradient(currentColor, currentColor);
+        background-position: 0% 100%;
+        background-repeat: no-repeat;
+        background-size: 0% 2px;
+        transition: background-size .3s; }
+      nav ul li:hover ul {
+        display: block; }
+    nav ul ul {
+      position: absolute;
+      display: none;
+      padding: 20px;
+      line-height: 30px;
+      background-color: #c7cedb;
+      opacity: 0.8; }
+      nav ul ul li {
+        display: block;
+        font-size: 14px;
+        text-transform: uppercase;
+        background-color: #c7cedb; }
+
+a:hover {
+  color: #E8C57E;
+  background-size: 100% 2px; }
+
+a:focus {
+  background-size: 100% 2px; }
+
+main {
+  background: #f7ebd4;
+  color: #222;
+  display: flex;
+  align-items: center; }
