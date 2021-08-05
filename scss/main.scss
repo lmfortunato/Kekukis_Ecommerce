@@ -1,5 +1,5 @@
 /*VARIABLES*/
-$fontFamily: 'Montserrat',
+$fontFamily: 'Poppins',
 sans-serif;
 $bgFooter: rgb(199, 206, 219);
 $pixels: 100px;
@@ -10,10 +10,7 @@ $colortitle: rgb(55, 86, 163);
 //  button ghost background-color:transparent; border: 3px solid hsl (40, 70%, 90%)
 
 /* GENERAL */
-@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
-@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,600;1,100&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,300;0,400;0,600;1,500&family=Work+Sans:ital,wght@0,100;0,600;1,100&display=swap";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -27,6 +24,42 @@ $colortitle: rgb(55, 86, 163);
     main {
         background: hsl(40, 70%, 90%);
         color: #222;
-        display: flex;
+        display: grid;
+        grid-template-areas: "filter products products products"
+                             "filter products products products"
+                             "filter products products products";
+        grid-column-gap: 25px;
         align-items: center;
+        .filter {
+            grid-area: filter;
+        }
+        #productsUI {
+            grid-area: products;
+            justify-content: center;
+            align-content: center;
+            .card {
+                display: inline-block;
+                align-items:center;
+                max-width: 350px;
+                margin: 30px;
+                font-family: "Poppins", sans-serif;
+                text-align: center;
+                background-color: transparent;
+                border: none;
+                .imgCards {
+                    border-radius: 50%;
+                }
+                .btnBuy {
+                    background-color: hsl(40, 70%, 70%);
+                    border-radius: 45px;
+                    color: white;
+                    width: 200px;
+                    height: 50px;
+                    text-align: center;
+                    font-size: 1.5em;
+                    padding: 10px 20px;
+                    border: none;
+                }
+        }
+    }
     }

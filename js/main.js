@@ -1,27 +1,11 @@
-// OBJECTS
-// LOG IN
-// let user = prompt ("Insert your User Account");
-// let password = prompt ("Insert your password" + "\n" + "Minimum 8 characters");
-
-// let logIn = "Your User is: " + user + "\n" +
-//             "Your password is: " + password;
-
-// console.log (logIn);
-
-// if (password.length >= 8) {
-//     alert (logIn);
-// }
-// else {
-//     alert ("Error. Password must have 8 characters");
-// }
-
 // START OBJECTS
 
 class Product {
-    constructor(code, name, price) {
+    constructor(code, name, price, img) {
         this.code = parseInt(code);
         this.name = name.toUpperCase();
         this.price = parseFloat(price);
+        this.img = img;
         this.quantity = 0;
         }
 
@@ -39,11 +23,11 @@ class Product {
 // START ARRAYS
 
 const products = [];
-products.push (new Product (0001, "carrot cake", 590));
-products.push (new Product (0002, "drip cake", 650));
-products.push (new Product (0003, "macarons", 300));
-products.push (new Product (0004, "cookies", 150));
-products.push (new Product (0005, "breakfast", 1500));
+products.push (new Product (0001, "carrot cake", 590, "img/carrotCake.png" ));
+products.push (new Product (0002, "drip cake", 650, "img/dripCake.jpg"));
+products.push (new Product (0003, "macarons", 300, "img/macarons.png"));
+products.push (new Product (0004, "cookies", 150, "img/cookies.jpeg"));
+products.push (new Product (0005, "cupcakes", 1500, "img/cupcakes.jpg"));
 
 console.log (products);
 
@@ -52,20 +36,42 @@ console.log (products);
 for (const product of products) {
     // CREATING THE TAG
     let divProduct = document.createElement("div");
-    divProduct.classList.add ("card");
+    divProduct.classList.add("card");
     // MODIFYING THE CONTENT
-    divProduct.innerHTML = `<h2> Name: ${product.name}</h2>
+    divProduct.innerHTML = `<img src="${product.img}" class="imgCards" width="150px">
+                            <h2 class="cardTitle">${product.name}</h2>
                             <br>
-                            <h4> Price: $ ${product.price}</h4>
-                            <button>Buy</button>
-                            <hr>`;
+                            <h4 class="cardSubtitle">$ ${product.price}</h4>
+                            <button id="${product.code}" class="btnBuy">Buy</button>`;
     // ADDING TO INTERFACE
-    document.body.appendChild (divProduct);
+    document.getElementById("productsUI").appendChild(divProduct);
+}
+
+const buttons = document.getElementsByClassName("btnBuy");
+
+const basket = [];
+
+function buyHandler(e) {
+    const selected = products.find(product => product.code == e.target.id);
+    basket.push(selected);
+    console.log(basket);
+    localStorage.setItem("basket", JSON.stringify(basket));
+    const divBasket = document.getElementById("basket");
+    divBasket.innerHTML = "";
+    for (const shopping of basket) {
+        let item = document.createElement("p");
+        item.innerHTML = `Product selected: ${shopping.name} $ ${shopping.price}`;
+        divBasket.appendChild(item);
+    }
+}
+
+for (const buy of buttons) {
+    buy.addEventListener("click" , buyHandler);
 }
 
 // START FILTER
 
-let filterPrice = prompt ("Insert maximum price");
+let filterPrice = 2000;
 let filtered = products.filter (obj => obj.price < filterPrice);
 console.log (filtered);
 
@@ -76,11 +82,11 @@ if (parseInt (filterPrice) > 0) {
         "Product: " + filtered[index].name + "\n"+
         "Price: $" + filtered[index].price + "\n" + "\n";    
     }
-    show ? alert (show) : alert ("Product not found");
+    
 }
-else {
-    alert ("The values are wrong");
-}
+// else {
+    
+// }
 
 // FINISH FILTER
 
@@ -104,8 +110,6 @@ for (let index = 0; index < products.length; index++) {
             "Product: " + products[index].name + "\n"+
             "Price: $" + products[index].price + "\n" + "\n";
 }
-
-alert (out);
 
 // REPLENISH AND SELL
 

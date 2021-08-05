@@ -1,9 +1,6 @@
 /*VARIABLES*/
 /* GENERAL */
-@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
-@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,600;1,100&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,300;0,400;0,600;1,500&family=Work+Sans:ital,wght@0,100;0,600;1,100&display=swap";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0; }
@@ -74,5 +71,34 @@ a:focus {
 main {
   background: #f7ebd4;
   color: #222;
-  display: flex;
+  display: grid;
+  grid-template-areas: "filter products products products" "filter products products products" "filter products products products";
+  grid-column-gap: 25px;
   align-items: center; }
+  main .filter {
+    grid-area: filter; }
+  main #productsUI {
+    grid-area: products;
+    justify-content: center;
+    align-content: center; }
+    main #productsUI .card {
+      display: inline-block;
+      align-items: center;
+      max-width: 350px;
+      margin: 30px;
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+      background-color: transparent;
+      border: none; }
+      main #productsUI .card .imgCards {
+        border-radius: 50%; }
+      main #productsUI .card .btnBuy {
+        background-color: #e8c47d;
+        border-radius: 45px;
+        color: white;
+        width: 200px;
+        height: 50px;
+        text-align: center;
+        font-size: 1.5em;
+        padding: 10px 20px;
+        border: none; }
