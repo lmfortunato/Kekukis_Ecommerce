@@ -49,7 +49,11 @@ for (const product of products) {
 
 const buttons = document.getElementsByClassName("btnBuy");
 
-const basket = [];
+let basket = [];
+
+if ("basket" in localStorage) {
+    basket = JSON.parse(localStorage.getItem("basket"));
+}
 
 function buyHandler(e) {
     const selected = products.find(product => product.code == e.target.id);
