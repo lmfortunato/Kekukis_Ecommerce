@@ -50,7 +50,7 @@ products.push (new Product (0026, "willy wonka cake", 1500, "img/willyWonka.png"
 
 // INTERACTING WITH THE INTERFACE
 
-for (const product of products) {
+for (const product of products) { 
     // CREATING THE TAG
     let divProduct = document.createElement("div");
     divProduct.classList.add("card");
@@ -168,7 +168,6 @@ function filteredProducts (e){
         buy.addEventListener("click" , buyHandler);
     }
 }
-console.log (filteredProducts)
 
 // REPLENISH AND SELL
 
