@@ -19,22 +19,32 @@ $colortitle: rgb(55, 86, 163);
 
 
 @import"_header";
+@import"_basket";
 
 
     main {
-        background: hsl(40, 70%, 90%);
+        background: hsl(40, 70%, 95%);
         color: #222;
-        display: grid;
-        grid-template-areas: "filter products products products"
-                             "filter products products products"
-                             "filter products products products";
-        grid-column-gap: 25px;
-        align-items: center;
-        .filter {
-            grid-area: filter;
+        display: flex;
+        // align-items: center;
+        #filter {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            align-items: flex-start; 
+            .btnFilter, #back{
+                background-color:hsl(40, 70%, 90%);
+                color: #222;
+                width: 150px;
+                height: 45px;
+                font-size: 14px;
+                border-radius: 45px;
+                margin: 10px;
+                font-family: $fontFamily;
+            }
+            
         }
         #productsUI {
-            grid-area: products;
             justify-content: center;
             align-content: center;
             .card {
@@ -48,17 +58,25 @@ $colortitle: rgb(55, 86, 163);
                 border: none;
                 .imgCards {
                     border-radius: 50%;
+                    width: 150px;
                 }
                 .btnBuy {
                     background-color: hsl(40, 70%, 70%);
                     border-radius: 45px;
                     color: white;
-                    width: 200px;
+                    width: 120px;
                     height: 50px;
                     text-align: center;
-                    font-size: 1.5em;
+                    font-size: 16px;
                     padding: 10px 20px;
                     border: none;
+                }
+                .cardTitle{
+                    font-size: 18px;
+                    padding: 10px;
+                }
+                .cardSubtitle{
+                    font-size: 16px;
                 }
         }
     }

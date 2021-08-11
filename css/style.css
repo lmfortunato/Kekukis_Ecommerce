@@ -16,6 +16,8 @@ header {
   margin: 0; }
   header img:hover {
     cursor: pointer; }
+  header #quantity {
+    width: 45px; }
 
 nav {
   display: flex;
@@ -68,17 +70,30 @@ a:hover {
 a:focus {
   background-size: 100% 2px; }
 
+.btn-delete {
+  width: 45px;
+  height: 45px;
+  cursor: pointer; }
+
 main {
-  background: #f7ebd4;
+  background: #fbf5e9;
   color: #222;
-  display: grid;
-  grid-template-areas: "filter products products products" "filter products products products" "filter products products products";
-  grid-column-gap: 25px;
-  align-items: center; }
-  main .filter {
-    grid-area: filter; }
+  display: flex; }
+  main #filter {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: flex-start; }
+    main #filter .btnFilter, main #filter #back {
+      background-color: #f7ebd4;
+      color: #222;
+      width: 150px;
+      height: 45px;
+      font-size: 14px;
+      border-radius: 45px;
+      margin: 10px;
+      font-family: "Poppins", sans-serif; }
   main #productsUI {
-    grid-area: products;
     justify-content: center;
     align-content: center; }
     main #productsUI .card {
@@ -91,14 +106,20 @@ main {
       background-color: transparent;
       border: none; }
       main #productsUI .card .imgCards {
-        border-radius: 50%; }
+        border-radius: 50%;
+        width: 150px; }
       main #productsUI .card .btnBuy {
         background-color: #e8c47d;
         border-radius: 45px;
         color: white;
-        width: 200px;
+        width: 120px;
         height: 50px;
         text-align: center;
-        font-size: 1.5em;
+        font-size: 16px;
         padding: 10px 20px;
         border: none; }
+      main #productsUI .card .cardTitle {
+        font-size: 18px;
+        padding: 10px; }
+      main #productsUI .card .cardSubtitle {
+        font-size: 16px; }
