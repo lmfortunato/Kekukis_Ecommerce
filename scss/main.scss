@@ -26,12 +26,18 @@ $colortitle: rgb(55, 86, 163);
         background: hsl(40, 70%, 95%);
         color: #222;
         display: flex;
-        // align-items: center;
+        #containerMain {
+            display:grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(min(100%,30rem), 1fr));
+        }
         #filter {
-            display: flex;
-            flex-direction: column;
+            // grid-area: filters;
+            display: grid;      
             row-gap: 10px;
             align-items: flex-start; 
+            position: fixed;
+            z-index: 999999;
             .btnFilter, #back{
                 background-color:hsl(40, 70%, 90%);
                 color: #222;
@@ -45,10 +51,10 @@ $colortitle: rgb(55, 86, 163);
             
         }
         #productsUI {
-            justify-content: center;
-            align-content: center;
+            // grid-area: products;
+            display: grid; 
+            grid-template-columns: 1fr 1fr 1fr;
             .card {
-                display: inline-block;
                 align-items:center;
                 max-width: 350px;
                 margin: 30px;

@@ -75,15 +75,26 @@ a:focus {
   height: 45px;
   cursor: pointer; }
 
+.backHome {
+  background-color: #f7ebd4;
+  color: #222;
+  width: 150px;
+  height: 45px;
+  font-size: 14px;
+  border-radius: 45px;
+  margin: 10px;
+  font-family: "Poppins", sans-serif; }
+
 main {
   background: #fbf5e9;
   color: #222;
   display: flex; }
   main #filter {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     row-gap: 10px;
-    align-items: flex-start; }
+    align-items: flex-start;
+    position: fixed;
+    z-index: 999999; }
     main #filter .btnFilter, main #filter #back {
       background-color: #f7ebd4;
       color: #222;
@@ -94,10 +105,9 @@ main {
       margin: 10px;
       font-family: "Poppins", sans-serif; }
   main #productsUI {
-    justify-content: center;
-    align-content: center; }
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; }
     main #productsUI .card {
-      display: inline-block;
       align-items: center;
       max-width: 350px;
       margin: 30px;
