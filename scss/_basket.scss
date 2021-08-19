@@ -10,7 +10,106 @@
     width: 150px;
     height: 45px;
     font-size: 14px;
+    border-style: none;
     border-radius: 45px;
     margin: 10px;
+    font-family: $fontFamily;
+}
+
+.backHome:hover {
+    background-color:hsl(40, 70%, 90%);
+    color: #222;
+    width: 150px;
+    height: 45px;
+    font-size: 14px;
+    border: 3px solid hsl(40, 70%, 70%);
+    border-radius: 45px;
+    margin: 10px;
+    font-family: $fontFamily;
+}
+
+.title {
+    font-size: 18px;
+    padding: 10px;
+    font-family: $fontFamily;
+    text-decoration: underline hsl(40, 70%, 70%) 05px;
+}
+
+#mainBasket {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    padding: 50px;
+}
+#basket {
+    .divBasket{
+        display: flex;
+        flex-direction: row;
+        margin: 20px;
+        justify-content: space-between;
+        align-items: center;
+        font-family: $fontFamily;
+        .basketImg {
+            width: 150px;
+            border-radius: 50%;
+        }
+        .buttonsBasket{
+            display: flex;
+            column-gap: 10px;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
+
+.line {
+
+    width: 100%;
+    height: 05px;
+    border-radius: 05px;
+    background-color: hsl(40, 70%, 70%);
+    padding: 10px;
+    
+}  
+
+#subtotal {
+    font-family: $fontFamily;
+    font-size: 20px;
+    align-items: center;
+    padding: 20px 20px;
+    div{
+        display: flex;
+        flex-direction: row;
+        column-gap: 20px;
+        justify-content: space-between;
+    }
+
+}
+
+.purchase {
+    background-color:hsl(40, 70%, 70%);
+    color: #222;
+    width: 150px;
+    height: 45px;
+    font-size: 14px;
+    border-style: none;
+    border-radius: 45px;
+    margin: 10px;
+    font-family: $fontFamily;
+    align-self: flex-start;
+}
+
+.purchase:hover {
+    background-color:hsl(40, 70%, 90%);
+    color: #222;
+    width: 150px;
+    height: 45px;
+    font-size: 14px;
+    border: 3px solid hsl(40, 70%, 70%);
+    border-radius: 45px;
+    font-family: $fontFamily;
+}
+
+.modalContent{
     font-family: $fontFamily;
 }

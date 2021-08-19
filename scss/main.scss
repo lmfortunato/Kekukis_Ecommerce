@@ -26,26 +26,35 @@ $colortitle: rgb(55, 86, 163);
         background: hsl(40, 70%, 95%);
         color: #222;
         display: flex;
-        #containerMain {
-            display:grid;
-            gap: 1rem;
-            grid-template-columns: repeat(auto-fill, minmax(min(100%,30rem), 1fr));
+        #filterBtn {
+            border-style: none;
+            padding: 10px;
+            background-color: hsl(40, 70%, 95%);
         }
         #filter {
-            // grid-area: filters;
-            display: grid;      
+            display: none;      
             row-gap: 10px;
             align-items: flex-start; 
-            position: fixed;
-            z-index: 999999;
             .btnFilter, #back{
+                background-color:hsl(40, 70%, 70%);
+                color: #222;
+                width: 150px;
+                height: 45px;
+                font-size: 14px;
+                border-style: none;
+                border-radius: 45px;
+                margin: 10px;
+                font-family: $fontFamily;
+            }
+            
+            .btnFilter:hover, #back:hover {
                 background-color:hsl(40, 70%, 90%);
                 color: #222;
                 width: 150px;
                 height: 45px;
                 font-size: 14px;
+                border: 3px solid hsl(40, 70%, 70%);
                 border-radius: 45px;
-                margin: 10px;
                 font-family: $fontFamily;
             }
             
@@ -70,13 +79,27 @@ $colortitle: rgb(55, 86, 163);
                     background-color: hsl(40, 70%, 70%);
                     border-radius: 45px;
                     color: white;
-                    width: 120px;
+                    width: 150px;
                     height: 50px;
                     text-align: center;
                     font-size: 16px;
+                    border-style: none;
                     padding: 10px 20px;
                     border: none;
                 }
+
+                .btnBuy:hover {
+                    background-color: hsl(40, 70%, 90%);
+                    border-radius: 45px;
+                    color: #222;
+                    width: 150px;
+                    height: 50px;
+                    text-align: center;
+                    font-size: 16px;
+                    border: 3px solid hsl(40, 70%, 70%);
+                    padding: 10px 20px;
+                }
+
                 .cardTitle{
                     font-size: 18px;
                     padding: 10px;
