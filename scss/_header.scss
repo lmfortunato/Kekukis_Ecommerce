@@ -21,63 +21,34 @@ header {
 nav {
     .nav-item {
     padding: 30px;
-    }
-    
+}
 	display: flex;
+	font-family: $fontFamily;
 	flex-direction: row;
     row-gap: 10px;
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
-	ul {
-		list-style: none;
-		font-size: 0;
-		li {
-			list-style: none;
-			display: inline-block;
-			text-decoration: none;
-			color: white;
-			font-size: 16px;
-			margin: 0 10px;
-			a {
-				text-decoration: none;
-				color: white;
-				text-transform: uppercase;
-				text-decoration: none;
-				background-image: linear-gradient(currentColor, currentColor);
-				background-position: 0% 100%;
-				background-repeat: no-repeat;
-				background-size: 0% 2px;
-				transition: background-size .3s;
-			}
-			&:hover {
-				ul {
-					display: block;
-				}
-			}
-		}
-		ul {
-			position: absolute;
-			display: none;
-			padding: $pixels/5;
-			line-height: ($pixels - 10px)/3;
-			background-color: rgb(199, 206, 219);
-			opacity: 0.8;
-			li {
-				display: block;
-				font-size: 14px;
-				text-transform: uppercase;
-				background-color: rgb(199, 206, 219);
-			}
-		}
+	img:hover{
+		text-shadow    : 2px 2px 9px #fff;
 	}
 }
-a {
-	&:hover {
-        color: #E8C57E;
-		background-size: 100% 2px;
-	}
-	&:focus {
-		background-size: 100% 2px;
-	}
+
+nav ul li{
+    list-style: none;
+    color       : white;
+    font-size   : 18px;
+    font-weight : 400;
+    padding-left: 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color          : white;
+}
+
+nav ul li a:hover{
+    text-decoration: none;
+    text-shadow    : 2px 2px 9px #fff;
+    color          : white;
 }

@@ -1,5 +1,5 @@
 // START OBJECTS
-$(document).ready(function () {
+$(document).ready(function () { 
     const buttons = $(".btnBuy");
     for (const buy of buttons) {
         buy.onclick = buyHandler;
@@ -9,6 +9,26 @@ $("#filterBtn").click (function (e){
     .delay(3500)
     .slideUp()
 })
+
+const URLGET = "data/products.json";
+    $.get (URLGET, function (data, status){
+        if (status == "success"){
+            for (const lit of data){
+            products.push(new Product(lit.code, lit.name, lit.price, lit.img, lit.category, lit.quantity));
+            }
+            
+    }
+    for (const product of products) {
+        $("#productsUI"). append (`<div class="card"> 
+                                <img src="${product.img}" class="imgCards" width="150px">
+                                <h2 class="cardTitle">${product.name}</h2>
+                                <h4 class="cardSubtitle">$ ${product.price}</h4>
+                                <button id="${product.code}" class="btnBuy">Add to cart</button>
+                                <div>`)}                            
+    })
+    
+
+    
 });
 
 window.addEventListener ("load", () =>{
@@ -17,14 +37,14 @@ window.addEventListener ("load", () =>{
 
 // INTERACTING WITH THE INTERFACE
 // USING JQUERY
-for (const product of products) {
-    $("#productsUI"). append (`<div class="card"> 
-                                <img src="${product.img}" class="imgCards" width="150px">
-                                <h2 class="cardTitle">${product.name}</h2>
-                                <h4 class="cardSubtitle">$ ${product.price}</h4>
-                                <button id="${product.code}" class="btnBuy">Add to cart</button>
-                                <div>`)
-}
+// for (const product of products) {
+//     $("#productsUI"). append (`<div class="card"> 
+//                                 <img src="${product.img}" class="imgCards" width="150px">
+//                                 <h2 class="cardTitle">${product.name}</h2>
+//                                 <h4 class="cardSubtitle">$ ${product.price}</h4>
+//                                 <button id="${product.code}" class="btnBuy">Add to cart</button>
+//                                 <div>`)
+// } 
 
 let basket;
 
