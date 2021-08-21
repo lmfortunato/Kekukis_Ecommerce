@@ -1,15 +1,12 @@
 // START OBJECTS
-$(document).ready(function () { 
-    const buttons = $(".btnBuy");
-    for (const buy of buttons) {
-        buy.onclick = buyHandler;
-}
-$("#filterBtn").click (function (e){
+$(document).ready(function () {    
+$("#filterBtn").click (function (){
     $("#filter").slideDown()
     .delay(3500)
     .slideUp()
 })
 
+// GET METHOD
 const URLGET = "data/products.json";
     $.get (URLGET, function (data, status){
         if (status == "success"){
@@ -24,27 +21,18 @@ const URLGET = "data/products.json";
                                 <h2 class="cardTitle">${product.name}</h2>
                                 <h4 class="cardSubtitle">$ ${product.price}</h4>
                                 <button id="${product.code}" class="btnBuy">Add to cart</button>
-                                <div>`)}                            
-    })
-    
+                                <div>`)} 
 
-    
+                                const buttons = $(".btnBuy");
+                                for (const buy of buttons) {
+                                    buy.onclick = buyHandler;
+                            }                           
+    })  
 });
 
 window.addEventListener ("load", () =>{
     $(".loading").remove();
 });
-
-// INTERACTING WITH THE INTERFACE
-// USING JQUERY
-// for (const product of products) {
-//     $("#productsUI"). append (`<div class="card"> 
-//                                 <img src="${product.img}" class="imgCards" width="150px">
-//                                 <h2 class="cardTitle">${product.name}</h2>
-//                                 <h4 class="cardSubtitle">$ ${product.price}</h4>
-//                                 <button id="${product.code}" class="btnBuy">Add to cart</button>
-//                                 <div>`)
-// } 
 
 let basket;
 
