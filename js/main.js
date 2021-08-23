@@ -1,9 +1,7 @@
 // START OBJECTS
 $(document).ready(function () {    
 $("#filterBtn").click (function (){
-    $("#filter").slideDown()
-    .delay(3500)
-    .slideUp()
+    $("#filter").slideToggle()
 })
 
 // GET METHOD
@@ -26,7 +24,10 @@ const URLGET = "data/products.json";
                                 const buttons = $(".btnBuy");
                                 for (const buy of buttons) {
                                     buy.onclick = buyHandler;
-                            }                           
+                            }
+                            $(".btnBuy").click (function (){
+                                swal("Product Added to cart!", "" , "success");
+                            })                          
     })  
 });
 
@@ -60,3 +61,39 @@ function buyHandler(e) {
         let quantity = document.getElementById('quantity').src="./img/addedToCart.svg"
     }
 }
+
+// CONTACT SECTION
+document.querySelector('#contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();   
+    if (e.target.elements.name.value !== "" && e.target.elements.email.value !== "" && e.target.elements.message.value !== ""){
+        $("#modalIndex").append(`<div class="modal fade modalContent modalIndex" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Your message has been sent</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            We will contact you shortly <br>
+                                            Keep track of your mailbox.
+                                            
+                                        <div class="modal-footer">
+                                        <button type="button" class="purchase btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>`);
+                                $(".purchase").click (function(){
+                                    e.target.elements.name.value = '';
+                                    e.target.elements.email.value = '';
+                                    e.target.elements.message.value = '';
+                                })
+    }
+    else {
+        e.target.elements.name.value = '';
+        e.target.elements.email.value = '';
+        e.target.elements.message.value = '';
+    }
+});

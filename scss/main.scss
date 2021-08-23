@@ -26,6 +26,29 @@ $colortitle: rgb(55, 86, 163);
         background: hsl(40, 70%, 95%);
         color: #222;
         display: flex;
+        .purchase{
+            background-color:hsl(40, 70%, 70%);
+            color: #222;
+            width: 150px;
+            height: 45px;
+            font-size: 14px;
+            border-style: none;
+            border-radius: 45px;
+            margin: 10px;
+            font-family: $fontFamily;
+            align-self: flex-start;
+        }
+        
+        .purchase:hover {
+            background-color:hsl(40, 70%, 90%);
+            color: #222;
+            width: 150px;
+            height: 45px;
+            font-size: 14px;
+            border: 3px solid hsl(40, 70%, 70%);
+            border-radius: 45px;
+            font-family: $fontFamily;
+        }
         #filterBtn {
             border-style: none;
             padding: 10px;

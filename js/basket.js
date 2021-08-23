@@ -150,3 +150,12 @@ function calculateTotal () {
     }
     return subtotal;
 }
+
+$(".purchase").click (function (){
+    localStorage.clear();
+    divBasket.innerHTML = '';
+    let text = document.createElement('div');
+        text.innerHTML = `<h2>Your basket is empty</h2>
+                        <a href="../index.html"><button class="backHome">Back Home</button></a>`
+        divBasket.appendChild(text)
+})

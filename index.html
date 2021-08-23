@@ -1,74 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kekukis</title>
 
-    <!-- FONT -->
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kekukis</title>
+
+	<!-- FONT -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700&display=swap"
+		rel="stylesheet">
 
-    <!-- CSS -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link href="./css/css/bootstrap.min.css" rel="stylesheet">
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<link href="./css/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="./css/contact.css">
 	<link rel="stylesheet" href="./css/loading.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="shortcut icon" href="img/cropped-favicon-270x270.png" type="image/x-icon">
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="shortcut icon" href="img/cropped-favicon-270x270.png" type="image/x-icon">
 
 </head>
+
 <body>
 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="index.html"> <img src="img/logo.png"
-						alt="" width="250px"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				<a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="" width="250px"></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
 					aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-            </div>
-				
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item">
-							<a href="">Home</a>
-						</li>
-						<li class="nav-item">
-							<a href="">Contact</a>
-						</li>
-						<li class="nav-item">
-							<a href="html/basket.html"><img id="quantity" src="img/addToCart.svg" width="45px" alt=""></a>
-						</li>
-					</ul>
-				</div>
+			</div>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a href="">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="#contact">Contact</a>
+					</li>
+					<li class="nav-item">
+						<a href="html/basket.html"><img id="quantity" src="img/addToCart.svg" width="45px" alt=""></a>
+					</li>
+				</ul>
+			</div>
 		</nav>
-    </header>    
-    <main>
+	</header>
+	<main>
 
 		<div class="loading">Loading&#8230;</div>
 
 		<div id="containerMain" class="container-fluid content">
 			<button id="filterBtn"><img src="img/equalizer (1).svg" width="50px"></button>
-		<div id="filter"></div>
-		<div id="productsUI" class="card-columns"></div>
+			<div id="filter"></div>
+			<div id="productsUI" class="card-columns"></div>
+			<section id="contact">
+
+				<h1 class="section-header">Contact</h1>
+
+				<div class="contact-wrapper">
+
+					<!-- Left contact page -->
+
+					<form id="contact-form" class="form-horizontal" role="form">
+
+						<div class="form-group">
+							<div class="col-sm-12">
+								<input type="text" class="form-control" id="name" placeholder="NAME" name="name"
+									value="" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-sm-12">
+								<input type="email" class="form-control" id="email" placeholder="EMAIL" name="email"
+									value="" required>
+							</div>
+						</div>
+
+						<textarea class="form-control" rows="10" placeholder="MESSAGE" name="message"
+							required></textarea>
+
+						<button class="btn btn-primary send-button" data-toggle="modal" data-target="#exampleModal" id="submit" type="submit" value="SEND">
+							<div class="alt-send-button">
+								<i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+							</div>
+						</button>
+						<div id="modalIndex"></div>
+					</form>
+
+					<!-- Left contact page -->
+
+					<div class="direct-contact-container">
+
+						<ul class="contact-list">
+							<li class="list-item"><i class="fa fa-map-marker fa-2x"><span
+										class="contact-text place">City, State</span></i></li>
+
+							<li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a
+											href="tel:1-212-555-5555" title="Give me a call">(123)
+											555-2368</a></span></i></li>
+
+							<li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a
+											href="mailto:#" title="Send me an email">example@gmail.com</a></span></i>
+							</li>
+
+						</ul>
+
+						<hr>
+						<ul class="social-media-list">
+							<li><a href="#" target="_blank" class="contact-icon">
+									<i class="fa fa-github" aria-hidden="true"></i></a>
+
+							<li><a href="img/instagram.svg" target="_blank" class="contact-icon">
+									<i class="fa fa-instagram" aria-hidden="true"></i></a>
+							</li>
+						</ul>
+						<hr>
+
+						<div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
+
+					</div>
+
+				</div>
+
+			</section>
 		</div>
-    </main>
+	</main>
 
-    <footer>
+	<footer>
 
-    </footer>
-	
-    <!-- SCRIPTS -->
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-    <script src="./js/js/bootstrap.bundle.js"></script>
+	</footer>
+
+	<!-- SCRIPTS -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+	</script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="https://kit.fontawesome.com/cd15054714.js" crossorigin="anonymous"></script>
+	<script src="./js/js/bootstrap.bundle.js"></script>
 	<script src="./js/class.js"></script>
-	<script src="./js/filter.js"></script> 
-	<script src="./js/main.js"></script> 
+	<script src="./js/filter.js"></script>
+	<script src="./js/main.js"></script>
 </body>
+
 </html>

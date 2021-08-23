@@ -54,6 +54,10 @@ function filteredProducts (e){
     for (const buy of buttons) {
         buy.addEventListener("click" , buyHandler);
     }
+    $(".btnBuy").click (function (){
+        swal("Product Added to cart!", "" , "success");
+    }) 
+    
     })
     let btnFiltered = document.getElementsByClassName("btnFilter")
     for (const filter of btnFiltered) {
@@ -77,4 +81,7 @@ function filteredProducts (e){
     for (const buy of buttons) {
         buy.addEventListener("click" , buyHandler);
     }
+    $(".btnBuy").click (function (){
+        swal("Product Added to cart!", "" , "success");
+    }) 
 }

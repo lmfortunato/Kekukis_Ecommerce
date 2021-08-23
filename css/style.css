@@ -150,6 +150,26 @@ main {
   background: #fbf5e9;
   color: #222;
   display: flex; }
+  main .purchase {
+    background-color: #e8c47d;
+    color: #222;
+    width: 150px;
+    height: 45px;
+    font-size: 14px;
+    border-style: none;
+    border-radius: 45px;
+    margin: 10px;
+    font-family: "Poppins", sans-serif;
+    align-self: flex-start; }
+  main .purchase:hover {
+    background-color: #f7ebd4;
+    color: #222;
+    width: 150px;
+    height: 45px;
+    font-size: 14px;
+    border: 3px solid #e8c47d;
+    border-radius: 45px;
+    font-family: "Poppins", sans-serif; }
   main #filterBtn {
     border-style: none;
     padding: 10px;
