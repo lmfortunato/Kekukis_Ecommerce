@@ -70,8 +70,16 @@ else {
 }
 
 // CONTACT SECTION
-document.querySelector('#contact-form').addEventListener('submit', (e) => {
+$('#contact-form').submit(function (e){
     e.preventDefault();   
+    const inputs = $("#contact-form :input");
+    const data = {name: inputs [0].value,
+                email: inputs [1].value,
+                message: inputs[2].value}
+    $.post ("https://jsonplaceholder.typicode.com/posts", data, function (data, status){
+        //HERE IS GOING TO BE THE POST INFORMATION
+        console.log(data)
+    })
     if (e.target.elements.name.value !== "" && e.target.elements.email.value !== "" && e.target.elements.message.value !== ""){
         $("#modalIndex").append(`<div class="modal fade modalContent modalIndex" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
@@ -103,4 +111,5 @@ document.querySelector('#contact-form').addEventListener('submit', (e) => {
         e.target.elements.email.value = '';
         e.target.elements.message.value = '';
     }
+    
 });
