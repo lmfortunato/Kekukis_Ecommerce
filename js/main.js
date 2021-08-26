@@ -62,6 +62,13 @@ function buyHandler(e) {
     }
 }
 
+if(basket.length){
+    let quantity = document.getElementById('quantity').src="./img/addedToCart.svg"
+}
+else {
+    let quantity = document.getElementById('quantity').src="./img/addToCart.svg"
+}
+
 // CONTACT SECTION
 document.querySelector('#contact-form').addEventListener('submit', (e) => {
     e.preventDefault();   

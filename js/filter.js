@@ -47,7 +47,7 @@ function filteredProducts (e){
         divCard.innerHTML = `<img src="${product.img}" class="imgCards" width="150px">
                             <h2 class="cardTitle">${product.name}</h2>                         
                             <h4 class="cardSubtitle">$ ${product.price}</h4>
-                            <button id="${product.code}" class="btnBuy">Buy</button>`;
+                            <button id="${product.code}" class="btnBuy">Add to cart</button>`;
                             divContainer.appendChild(divCard)
     }
     let buttons = document.getElementsByClassName("btnBuy");
@@ -73,7 +73,7 @@ function filteredProducts (e){
         divCard.innerHTML = `<img src="${product.img}" class="imgCards" width="150px">
                             <h2 class="cardTitle">${product.name}</h2>
                             <h4 class="cardSubtitle">$ ${product.price}</h4>
-                            <button id="${product.code}" class="btnBuy">Buy</button>`;
+                            <button id="${product.code}" class="btnBuy">Add to cart</button>`;
                             divContainer.appendChild(divCard)
     }
 

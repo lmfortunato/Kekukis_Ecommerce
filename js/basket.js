@@ -158,4 +158,11 @@ $(".purchase").click (function (){
         text.innerHTML = `<h2>Your basket is empty</h2>
                         <a href="../index.html"><button class="backHome">Back Home</button></a>`
         divBasket.appendChild(text)
+
+    let total = document.getElementById ("subtotal");
+        total.innerHTML = "";
+        let price = document.createElement ("div");
+        price.innerHTML = `<p>Total</p>
+                        <p>$0</p>`
+        total.appendChild(price)
 })
